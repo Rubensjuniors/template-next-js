@@ -14,24 +14,24 @@ jobs:
           node-version: 18.x
 
       - uses: actions/cache@v2
-        id: pnpm-cache
+        id: yarn-cache
         with:
           path: |
             ~/cache
             !~/cache/exclude
             **/node_modules
-          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm.lock') }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
-            ${{ runner.os }}-pnpm-
+            ${{ runner.os }}-yarn-
 
       - name: Install dependencies
-        run: pnpm install
+        run: yarn install
 
       - name: Linting
-        run: pnpm lint
+        run: yarn lint
 
       - name: Test
-        run: pnpm test
+        run: yarn test
 
       - name: Build
-        run: pnpm build
+        run: yarn build
