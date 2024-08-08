@@ -6,11 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "typecheck": "tsc --project tsconfig.json --noEmit",
     "lint": "eslint src --max-warnings=0",
-    "prettier:check": "prettier --check .",
-    "prettier:format": "prettier --write .",
-    "type-check": "tsc",
-    "quality-check": "npm run lint && npm run type-check && npm run prettier:check"
+    "test": "jest",
+    "test:watch": "yarn test --watch",
+    "test:coverage": "yarn test --coverage --detectOpenHandles",
+    "test:coverage:text": "yarn test --coverageReporters='text-summary'"
   },
   "husky": {
     "hooks": {
@@ -19,8 +20,8 @@
   },
   "lint-staged": {
     "src/**/*.+(js|jsx|ts|tsx|md|mdx|yml|yaml)": [
-      "pnpm lint --fix",
-      "pnpm test --findRelatedTests --bail --passWithNoTests"
+      "yarn lint --fix",
+      "yarn test --findRelatedTests --bail --passWithNoTests"
     ]
   },
   "dependencies": {
