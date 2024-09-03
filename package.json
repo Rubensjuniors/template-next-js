@@ -28,7 +28,7 @@
     "react-dom": "^18"
   },
   "devDependencies": {
-    "@swc/core": "^1.7.9",
+    "@swc/core": "^1.7.23",
     "@swc/jest": "^0.2.36",
     "@testing-library/jest-dom": "^6.4.8",
     "@testing-library/react": "^16.0.0",
